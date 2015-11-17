@@ -13,6 +13,10 @@ h4, h3, h2, h1 {
 	text-align: center;
 }
 
+h2 {
+	color: #9b2e19 !important;
+}
+
 .row{
 	margin-top: 0;
 	margin-bottom: 0;
@@ -34,7 +38,7 @@ h4, h3, h2, h1 {
 	width: 80%;
 	margin-left: 10%;
 	margin-right: 10%;
-	margin-top: 15%;
+	margin-top: 20%;
 }
 
 .col-md-8, .col-xs-8{
@@ -59,6 +63,12 @@ p {
 	font-size: 1em;
 }
 
+#quote {
+	font-size: 1.25em;
+	color: #818e3e;
+	text-align: center;
+}
+
 /********************************************************************
 			Nav Bar 
 *********************************************************************/
@@ -75,6 +85,7 @@ p {
 .navbar a{
 	font-size: 1em;
 	color: white !important;
+	cursor: pointer;
 }
 
 .navbar .navbar-nav{
@@ -132,6 +143,45 @@ p {
 	font-family: 'Fira Sans', sans-serif;
 	text-align: center;
 	font-size: 1.5em;
+}
+
+#centered {
+	margin-left: 38.5%;
+}
+
+#donateButton {
+	margin-left: 10% !important;
+	margin-right: 12%;
+	display: inline;
+}
+
+#receiveButton {
+	margin-right: 10% !important;
+	margin-left: 12%;
+	display: inline;
+}
+
+/*********************************************************************
+			Forms
+*********************************************************************/
+
+.form-group {
+	margin-left: 5% !important;
+	margin-right: 5% !important;
+}
+
+input[type="radio"] {
+	margin-right: .5em;
+	margin-left: 1em;
+}
+
+/*********************************************************************
+			Tables
+*********************************************************************/
+
+#table-div {
+	margin-left: 5% !important;
+	margin-right: 5% !important;
 }
 
 /*********************************************************************

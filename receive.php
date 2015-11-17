@@ -6,7 +6,7 @@
 		<meta name="viewport" content="width=device=width, initial-scale=1">
 		<link rel="icon" href="../../favicon.ico">
 
-		<title>Trash Hunger in America</title>
+		<title>Food Distribution Centers</title>
 		<link href="css/bootstrap.css" rel="stylesheet">
 		<link href="css/custom.css" rel="stylesheet">
 		<link rel="stylesheet" href="//maxcdn.boostrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
@@ -32,12 +32,29 @@
 				<div class="inside inside-full-height">
       				  <div class="content">
       				  	<div class="mainText">
-      				  		<h2>Your Assigned Section Title Here</h2>
+      				  		<h2>Donation Locations</h2>
 							<p>This is where you will code and work!!</p>
 							<p>Tables, login, text, and forms in this section, please </p>
 							<p>Example Buttons to use below: </p>
-							<p><button class="buttonLogin" type="button">Login</button></p>
-							<p><button class="buttonOther" type=button>OtherButton</button></p>
+
+							<div id="table-div">
+								<table class="table table-striped">
+									<thead>
+										<th>Location</th>
+										<th>Address</th>
+									</thead>
+									<tbody>
+										<tr>
+											<td>Place 1</td>
+											<td>Address....</td>
+										</tr>
+										<tr>
+											<td>Place 2</td>
+											<td>Address...</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 						</div>
 					  </div>
 				</div>

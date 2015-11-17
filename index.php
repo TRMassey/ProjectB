@@ -32,12 +32,21 @@
 				<div class="inside inside-full-height">
       				  <div class="content">
       				  	<div class="mainText">
-      				  		<h2>Your Assigned Section Title Here</h2>
-							<p>This is where you will code and work!!</p>
-							<p>Tables, login, text, and forms in this section, please </p>
-							<p>Example Buttons to use below: </p>
-							<p><button class="buttonLogin" type="button">Login</button></p>
-							<p><button class="buttonOther" type=button>OtherButton</button></p>
+      				  		<h2>Welcome!</h2>
+      				  		<br>
+      				  		<p id="quote">"Hunger is not an issue of charity. It is an issue of justice." - Jacques Diouf</p>
+      				  		<br>
+      				  		<br>
+							<p>Approximately 40% of food in the US ends up in landfills, so to help alleviate this problem, 
+							we provide grocery stores and other food sources an option to donate their unused and unsold food
+							to families and people in need in their community, simultaneously reducing food waste and combating
+							hunger locally!  </p>
+							<br>
+							<br>
+							<p><a href="donate.php"><button class="buttonOther" id="donateButton" type=button>DONATE FOOD</button></a>
+							<a href="receive.php"><button class="buttonOther" id="receiveButton" type=button>RECEIVE FOOD</button></a></p>
+							<br>
+							<br>
 						</div>
 					  </div>
 				</div>

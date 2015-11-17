@@ -21,11 +21,10 @@
 			<ul class="nav navbar-nav navbar-right">
 				<div class="collapse navbar-collapse" id="navigationbar">
 					<ul class="nav navbar-nav navbar-right">
-						<li><a>DROP-OFF LOCATION</a></li>
-						<li><a>BECOME A DROP-OFF LOCATION</a></li>
-						<li><a>DONATE FOOD</a></li>
-						<li><a>TAX FORMS</a></li>
-						<li><a>SIGN OUT</a></li>
+						<li><a href="index.php">HOME</a></li>
+						<li><a href="receive.php">DISTRIBUTION LOCATIONS</a></li>
+						<li><a>BECOME A DISTRIBUTION LOCATION</a></li>
+						<li><a href="donate.php">DONATE FOOD</a></li>
 					</ul>
 				</div>
 			</ul>
