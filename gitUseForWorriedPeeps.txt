@@ -1,0 +1,22 @@
+Git Use:
+
+Git Shell First Time-
+1.) git init the folder you want to store files in
+2.) git clone https://github.com/TRMassey/ProjectB.git
+3.) Make changes to the files
+4.) git add
+5.) git commit -m "message here"
+6.) git pull
+7.) git push
+
+
+Other times-
+1.) Go to folder that you did git init on
+2.) git pull
+3.) make changes
+4.) git add
+5.) git commit -m "message here"
+6.) git pull
+7.) git push
+
+The double "git pull" will make sure if anyone is editing at the same time as you, any merging issues are fixed prior to pushing.
