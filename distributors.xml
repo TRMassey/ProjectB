@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<distributors>
+   <distributor>
+      <id>1</id>
+	  <name>Jane's distribution</name>
+	  <email>ammj@oregonstate.edu</email>
+	  <address>123 My Road</address>
+	  <city>Montgomery</city>
+	  <state>AL</state>
+	  <postcode>36104</postcode>
+	  <phone>818-555-5555</phone>
+	  <drophours>9-3 Mon-Fri, 8-10 Sat</drophours>
+	  <pickuphours>3-5 Mon-Fri, 12-5 Sat</pickuphours>
+   </distributor>
+   <distributor>
+      <id>2</id>
+	  <name>Paul's distribution</name>
+	  <email>ammj@oregonstate.edu</email>
+	  <address>120 Glendale BLVD</address>
+	  <city>Los Angeles</city>
+	  <state>CA</state>
+	  <postcode>90210</postcode>
+	  <phone>818-555-5555</phone>
+	  <drophours>9-3 Mon-Fri, 10-4 Sat</drophours>
+	  <pickuphours>3-5 Mon-Fri, 12-5 Sat</pickuphours>
+   </distributor>
+   <distributor>
+      <id>3</id>
+	  <name>Someone's Grocers</name>
+	  <email>ammj@oregonstate.edu</email>
+	  <address>120 Anywhere BLVD</address>
+	  <city>Mobile</city>
+	  <state>AL</state>
+	  <postcode>36602</postcode>
+	  <phone>818-469-5555</phone>
+	  <drophours>9-11 Mon-Fri, 10-4 Sat</drophours>
+	  <pickuphours>3-5 Mon-Fri, 12-5 Sat</pickuphours>
+   </distributor>
+      <distributor>
+      <id>4</id>
+	  <name>Alex's distribution</name>
+	  <email>ammj@oregonstate.edu</email>
+	  <address>120 Glendale BLVD</address>
+	  <city>Mobile</city>
+	  <state>AL</state>
+	  <postcode>90210</postcode>
+	  <phone>818-999-5555</phone>
+	  <drophours>9-3 Mon-Fri, 10-4 Sat</drophours>
+	  <pickuphours>3-5 Mon-Fri, 12-5 Sat</pickuphours>
+   </distributor>
+</distributors>
