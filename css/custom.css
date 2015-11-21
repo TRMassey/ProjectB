@@ -69,6 +69,17 @@ p {
 	text-align: center;
 }
 
+/* centers items and removes margin */
+.dcentered {
+	text-align: center;
+	margin-right: 0px;
+}
+
+/* changes background to white */
+.regBack {
+	background: #fff;
+}
+
 /********************************************************************
 			Nav Bar 
 *********************************************************************/
