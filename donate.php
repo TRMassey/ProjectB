@@ -13,8 +13,40 @@
 		<link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700' rel='stylesheet' type='text/css'>
 	</head>
 	<body>
-		<?php include("storeNav.php"); ?>
 
+		<!-- navBar fixed to top of page -->
+	<nav class="navbar navbar-default navabar-fixed-top">
+		<!-- image above the nav bar, fixed-->
+		<img src="img/fruits1.png">
+
+		<!-- actual navigation portion-->
+		<div class="container-fluid">
+
+			<!-- Make collapse if mobile -->
+		<div class="navbar-header">
+      		<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navigationbar">
+        		<span class="sr-only">Toggle navigation</span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+        		<span class="icon-bar"></span>
+      		</button>
+    	</div>
+
+
+			<!-- Right side -->
+			<ul class="nav navbar-nav navbar-right">
+				<div class="collapse navbar-collapse" id="navigationbar">
+					<ul class="nav navbar-nav navbar-right">
+						<li><a href="index.php">HOME</a></li>
+						<li><a href="receive.php">DISTRIBUTION LOCATIONS</a></li>
+						<li><a>BECOME A DISTRIBUTION LOCATION</a></li>
+						<li><a href="donate.php">DONATE FOOD</a></li>
+					</ul>
+				</div>
+			</ul>
+
+		</div>  <!-- End container -->
+	</nav> <!-- End Nav bar -->
 		<div class="row">
 
 			<!-- left side of screen -->
@@ -36,6 +68,7 @@
 								<div class="row">
 									<h2>Donation</h2>
 									</br>
+										
 								</div>
 							</div>
 							<div class="row" id="errors">
@@ -141,6 +174,64 @@
 									</div>
 								</div>
 							</div>
+							<!-- hidden until donation center selected -->
+							<div class="row" id="donateSubmit">
+							<!-- changed form name to not clash with other form -->
+								<form name="requestForm" role="form" id="requestForm" method="post" action="">
+									<div class="form-group">
+										<label>Distrbution Center:</label>
+									</div>
+									<div class="row" id="subDistributor">
+									</div>
+									<div class="form-group">
+										<label>Donor/Organization Name:</label>
+											<input type="text" name="distOrg" id="distOrg" class="form-control required text">
+									</div>
+									<div class="form-group">
+										<label>Contact Name:</label>
+											<input type="text" name="distContact" id="distContact" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Email:</label>
+											<input type="text" name="distEmail" id="distEmail" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Phone: (555) 555-5555</label>
+											<input type="text" name="distPhone" id="distPhone" class="form-control">
+									</div>
+									<div class="form-group">
+										<label>Description of Donation:</label>
+											<input type="text" name="distDesc" id="distDesc" class="form-control">
+									</div>
+									<div class="form-group">
+										<label for="foodType">Food Type:</label>
+											<!-- updated div name and id and added error box -->
+											<input type="checkbox" name="produce" value="produce" id="frmProduce" class="checkreq">Produce
+											<input type="checkbox" name="perishables" value="perishables" id="frmPerishables">Perishables
+											<input type="checkbox" name="shelf-stable" value="shelf-stable" id="frmShelfStable">Shelf-Stable
+										<div for="frmCity" id="checkError">
+										</div>
+									</div>
+									<input type="hidden" id="dEmail" name="dEmail">
+									<input type="hidden" id="dDistr" name="dDistr">
+									<input type="hidden" id="dPhone" name="dPhone">
+									<!-- added class -->
+									<div class="row dcentered">
+											<!-- updated to close input not div -->
+											<input type="submit" class="buttonOther dcentered" name="frmSubmit" id="frmSubmit" value="Submit"/></input>		
+									</div>
+									
+								</form>
+								
+							</div>
+							<!-- end hidden until donation center selected -->
+							<div class="row" id="donateSuccess">
+								<h3 class="valid">Your Request Successfully Submitted!</h3>
+							</div>
+							<div class="row" id="donateError">
+								<h3 class="invalid">Error Occured please try again later</h3>
+							</div>
+							
 						</div>
 					  </div>
 				</div>
@@ -150,8 +241,11 @@
 
 		<!-- Bootstraps javascript -->
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="//ajax.aspnetcdn.com/ajax/jquery.validate/1.9/jquery.validate.min.js"></script>
+		<script src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.9/additional-methods.js"></script>
 		<script src="js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="js/donateForms.js"></script>
 		<script src="ie10-viewport-bug-workaround.js"></script>
+
 	</body>
 </html>
