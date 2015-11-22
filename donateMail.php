@@ -29,8 +29,8 @@
 		}
 		
 		// enter data into database
-		$dbEntry = new donation();
-		$dbEntry->sqlInsert($donorName, $donorContact, $donorEmail, $donorPhone, $donorDesc, $donorType);
+		$dbEntry = new donations();
+		$dbEntry->sqlInsert($donorName, $donorContact, $donorEmail, $donorPhone, $donorDesc, 1, 1);
 		
 		// set email subject
 		$subject = "Scheduled Pickup Requested";
