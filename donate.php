@@ -14,7 +14,7 @@
 	</head>
 	<body>
 
-		<!-- navBar fixed to top of page -->
+	<!-- navBar fixed to top of page -->
 	<nav class="navbar navbar-default navabar-fixed-top">
 		<!-- image above the nav bar, fixed-->
 		<img src="img/fruits1.png">
@@ -179,7 +179,7 @@
 							<!-- changed form name to not clash with other form -->
 								<form name="requestForm" role="form" id="requestForm" method="post" action="">
 									<div class="form-group">
-										<label>Distrbution Center:</label>
+										<label>Distribution Center:</label>
 									</div>
 									<div class="row" id="subDistributor">
 									</div>
@@ -209,7 +209,7 @@
 											<input type="checkbox" name="produce" value="produce" id="frmProduce" class="checkreq">Produce
 											<input type="checkbox" name="perishables" value="perishables" id="frmPerishables">Perishables
 											<input type="checkbox" name="shelf-stable" value="shelf-stable" id="frmShelfStable">Shelf-Stable
-										<div for="frmCity" id="checkError">
+										<div id="checkError">
 										</div>
 									</div>
 									<input type="hidden" id="dEmail" name="dEmail">

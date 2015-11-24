@@ -111,7 +111,8 @@ $( document ).ready(function() {
                 },
                 error: function() {
                     showError();
-                }
+                },
+				async: false
             });
 
         }
@@ -134,7 +135,8 @@ function startAjax(passedFunction) {
      */
     $.ajax({url:"distributors.xml",
         success:passedFunction,error:errorFunction,
-        dataType: 'text'} 
+        dataType: 'text',
+		async: false} 
     );
 }
 
@@ -261,9 +263,12 @@ function startSchedule(distroID){
     var distrotime = "";
     var distributor = "";
     var distributors = "";
+	var returnVal = "";
+	var distroID = distroID;
+	var distroemail = "";
     
     /* changed to hide donate Main */
-    $('#donateMain').hide("");
+    $('#donateMain').hide();
     $('#donateSubmit').show();
     $("#donateSuccess").hide();
     $("#donateError").hide();
@@ -275,6 +280,7 @@ function startSchedule(distroID){
     */
     $.ajax({url:"distributors.xml",
         success:function(data){
+
             returnVal = $(data).find("id:contains('" + distroID +"')");
             //alert(returnVal.siblings("name").text());
             distro = returnVal.siblings("name").text();
@@ -301,7 +307,8 @@ function startSchedule(distroID){
 
         },
         error:errorFunction,
-        dataType: 'text'} 
+        dataType: 'text',
+		async: false} 
     );
            
 

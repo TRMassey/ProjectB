@@ -12,25 +12,45 @@
 		$donorPhone = strip_tags($_POST['distPhone']);
 		$donorDesc = strip_tags($_POST['distDesc']);
 		$donorType = "";
+		$donorValue = 0;
 		
 		
 		
 		// set donation type
 		if(isset($_POST['produce'])){
 			$donorType .= "Produce ";
+			$donorValue = 1;
 		}
 		
 		if(isset($_POST['perishables'])){
 			$donorType .= "Perishables ";
+			$donorValue = 2;
 		}
 		
 		if(isset($_POST['shelf-stable'])){
 			$donorType .= "Shelf-Stable ";
+			$donorValue = 3;
+		}
+		
+		if(isset($_POST['produce']) && isset($_POST['perishables'])){
+			$donorValue = 4;
+		}
+		
+		if(isset($_POST['produce']) && isset($_POST['shelf-stable'])){
+			$donorValue = 5;
+		}
+		
+		if(isset($_POST['shelf-stable']) && isset($_POST['perishables'])){
+			$donorValue = 6;
+		}
+		
+		if(isset($_POST['produce']) && isset($_POST['shelf-stable']) && isset($_POST['perishables'])){
+			$donorValue = 6;
 		}
 		
 		// enter data into database
 		$dbEntry = new donations();
-		$dbEntry->sqlInsert($donorName, $donorContact, $donorEmail, $donorPhone, $donorDesc, 1, 1);
+		$dbEntry->sqlInsert($donorName, $donorContact, $donorEmail, $donorPhone, $donorDesc, $donorValue, 1);
 		
 		// set email subject
 		$subject = "Scheduled Pickup Requested";
