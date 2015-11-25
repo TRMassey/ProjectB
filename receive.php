@@ -117,6 +117,8 @@
 												echo "<th>Address</th>";
 												echo "<th>Food Description</th>";
 												echo "<th>Food Type</th>";
+												echo "<th>Hours for Pick up</th>";
+												echo "<th>Days for Pick up</th>";
 											echo "</tr>";
 
 									/* fill in the table from the db */
@@ -125,6 +127,8 @@
 										echo '<tr>';
 											echo '<td>'.$row['NAME'].'</td>';
 											echo '<td>'.$row['ADDRESS'].'</td>';
+											echo '<td> Description here </td>';
+											echo '<td> Food Type here </td>';
 											echo '<td>'.$row['HOURS'].'</td>';
 											echo '<td>'.$row['DAYS'].'</td>';
         								echo '</tr>';   
