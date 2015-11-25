@@ -1,7 +1,8 @@
   <?php
   	include "info.php";
-  	
-  	$mysqli = new mysqli("oniddb.cws.oregonstate.edu", "masseyta-db", "ov00iqgNNd5KBsCZ", "masseyta-db");
+
+  // must have my info.php file to get password. Contact me if you don't have it. I emailed it.
+  $mysqli = new mysqli("oniddb.cws.oregonstate.edu", "masseyta-db", $dbpass, "masseyta-db");
   	if($mysqli->connect_errno){
     	echo "ERROR : Connection failed: (".$mysqli->connect_errno.")".$mysqli->connect_error;
   }
