@@ -1,3 +1,10 @@
+  <?php
+  	$mysqli = new mysqli("oniddb.cws.oregonstate.edu", "masseyta-db", "ov00iqgNNd5KBsCZ", "masseyta-db");
+  	if($mysqli->connect_errno){
+    	echo "ERROR : Connection failed: (".$mysqli->connect_errno.")".$mysqli->connect_error;
+  }
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 	<head>
@@ -33,10 +40,11 @@
       				  <div class="content">
       				  	<div class="mainText">
       				  		<h2>Donation Locations</h2>
+      				  		<form action ='receive.php' method ='GET'>
 							<div class="form-group">
 								<label>State:</label>
 								<!-- http://www.freeformatter.com/usa-state-list-html-select.html -->
-									<select class="form-control" name="pickupState" form="form1" id="frmState">
+									<select class="form-control" name = "pickupState" id="frmState">
 										<option value="">Please Choose State</option>
 										<option value="AL">Alabama</option>
 										<option value="AK">Alaska</option>
@@ -90,27 +98,37 @@
 										<option value="WI">Wisconsin</option>
 										<option value="WY">Wyoming</option>
 									</select>
+									</br>
+									<input type ="submit" align="center" id="submit" name="submit" value="Find Locations">
+        							</form>
 							</div>
 
-							<div id="table-div">
-								<table class="table table-striped">
-									<?php
-										echo "<tr>";
-											echo "<th>Donation Center</th>";
-											echo "<th>Address</th>";
-											echo "<th>Food Description</th>";
-											echo "<th>Food Type</th>";
-										echo "</tr>";
+							<?php   
 
-								/* fill in the table from the db */
-								$result = mysqli_query($mysqli, 'SELECT * FROM distribution WHERE STATE="frmState"');
-								while($row = mysqli_fetch_array($result)){
-									echo '<tr>';
-										echo '<td>'.$row['NAME'].'</td>';
-										echo '<td>'.$row['ADDRESS'].'</td>';
-										echo '<td>'.$row['HOURS'].'</td>';
-										echo '<td>'.$row['DAYS'].'</td>';
-        							echo '</tr>';   
+
+								if(isset($_GET['submit']) && $_GET['submit'] != "" ){
+    								$state = $_GET['pickupState'];
+    
+
+									echo '<div id="table-div">';
+										echo '<table class="table table-striped">';
+											echo "<tr>";
+												echo "<th>Donation Center</th>";
+												echo "<th>Address</th>";
+												echo "<th>Food Description</th>";
+												echo "<th>Food Type</th>";
+											echo "</tr>";
+
+									/* fill in the table from the db */
+									$result = mysqli_query($mysqli, 'SELECT * FROM distribution WHERE STATE = "'.$state.'"');
+									while($row = mysqli_fetch_array($result)){
+										echo '<tr>';
+											echo '<td>'.$row['NAME'].'</td>';
+											echo '<td>'.$row['ADDRESS'].'</td>';
+											echo '<td>'.$row['HOURS'].'</td>';
+											echo '<td>'.$row['DAYS'].'</td>';
+        								echo '</tr>';   
+									}
 								}
 								?>
 										</tr>
