@@ -33,24 +33,86 @@
       				  <div class="content">
       				  	<div class="mainText">
       				  		<h2>Donation Locations</h2>
-							<p>This is where you will code and work!!</p>
-							<p>Tables, login, text, and forms in this section, please </p>
-							<p>Example Buttons to use below: </p>
+							<div class="form-group">
+								<label>State:</label>
+								<!-- http://www.freeformatter.com/usa-state-list-html-select.html -->
+									<select class="form-control" name="pickupState" form="form1" id="frmState">
+										<option value="">Please Choose State</option>
+										<option value="AL">Alabama</option>
+										<option value="AK">Alaska</option>
+										<option value="AZ">Arizona</option>
+										<option value="AR">Arkansas</option>
+										<option value="CA">California</option>
+										<option value="CO">Colorado</option>
+										<option value="CT">Connecticut</option>
+										<option value="DE">Delaware</option>
+										<option value="DC">District Of Columbia</option>
+										<option value="FL">Florida</option>
+										<option value="GA">Georgia</option>
+										<option value="HI">Hawaii</option>
+										<option value="ID">Idaho</option>
+										<option value="IL">Illinois</option>
+										<option value="IN">Indiana</option>
+										<option value="IA">Iowa</option>
+										<option value="KS">Kansas</option>
+										<option value="KY">Kentucky</option>
+										<option value="LA">Louisiana</option>
+										<option value="ME">Maine</option>
+										<option value="MD">Maryland</option>
+										<option value="MA">Massachusetts</option>
+										<option value="MI">Michigan</option>
+										<option value="MN">Minnesota</option>
+										<option value="MS">Mississippi</option>
+										<option value="MO">Missouri</option>
+										<option value="MT">Montana</option>
+										<option value="NE">Nebraska</option>
+										<option value="NV">Nevada</option>
+										<option value="NH">New Hampshire</option>
+										<option value="NJ">New Jersey</option>
+										<option value="NM">New Mexico</option>
+										<option value="NY">New York</option>
+										<option value="NC">North Carolina</option>
+										<option value="ND">North Dakota</option>
+										<option value="OH">Ohio</option>
+										<option value="OK">Oklahoma</option>
+										<option value="OR">Oregon</option>
+										<option value="PA">Pennsylvania</option>
+										<option value="RI">Rhode Island</option>
+										<option value="SC">South Carolina</option>
+										<option value="SD">South Dakota</option>
+										<option value="TN">Tennessee</option>
+										<option value="TX">Texas</option>
+										<option value="UT">Utah</option>
+										<option value="VT">Vermont</option>
+										<option value="VA">Virginia</option>
+										<option value="WA">Washington</option>
+										<option value="WV">West Virginia</option>
+										<option value="WI">Wisconsin</option>
+										<option value="WY">Wyoming</option>
+									</select>
+							</div>
 
 							<div id="table-div">
 								<table class="table table-striped">
-									<thead>
-										<th>Location</th>
-										<th>Address</th>
-									</thead>
-									<tbody>
-										<tr>
-											<td>Place 1</td>
-											<td>Address....</td>
-										</tr>
-										<tr>
-											<td>Place 2</td>
-											<td>Address...</td>
+									<?php
+										echo "<tr>";
+											echo "<th>Donation Center</th>";
+											echo "<th>Address</th>";
+											echo "<th>Food Description</th>";
+											echo "<th>Food Type</th>";
+										echo "</tr>";
+
+								/* fill in the table from the db */
+								$result = mysqli_query($mysqli, 'SELECT * FROM distribution WHERE STATE="frmState"');
+								while($row = mysqli_fetch_array($result)){
+									echo '<tr>';
+										echo '<td>'.$row['NAME'].'</td>';
+										echo '<td>'.$row['ADDRESS'].'</td>';
+										echo '<td>'.$row['HOURS'].'</td>';
+										echo '<td>'.$row['DAYS'].'</td>';
+        							echo '</tr>';   
+								}
+								?>
 										</tr>
 									</tbody>
 								</table>
