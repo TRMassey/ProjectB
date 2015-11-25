@@ -42,7 +42,7 @@
 				<div class="inside inside-full-height">
       				  <div class="content">
       				  	<div class="mainText">
-      				  		<h2>Donation Locations</h2>
+      				  		<h2>Food Distribution Locations</h2>
       				  		<form action ='receive.php' method ='GET'>
 							<div class="form-group">
 								<label>State:</label>
