@@ -51,12 +51,22 @@ h2 {
 }
 
 .inside-full-height, .content {
-	height:100vh;
+	height: 100%;
 	min-height: 100%;
  	margin-top: 0;
-  	margin-bottom: 0;
+  	margin-bottom: 5%;
 }
 
+/** taken from http://stackoverflow.com/questions/14819425/bootstrap-div-100-height-of-its-parent-element */
+.col{
+    margin-bottom: -99999px;
+    padding-bottom: 99999px;
+}
+
+.col-wrap{  
+    overflow: hidden;   
+}  
+/**********************************/
 p {
 	margin-right: 5%;
 	margin-left: 5%;
@@ -73,7 +83,7 @@ p {
 .dcentered {
 	text-align: center;
 	margin-right: 0px;
-	margin-left: 5%
+	margin-left: 5%;
 }
 
 /* changes background to white */
@@ -124,6 +134,7 @@ p {
 	margin-top: 0;
 }
 
+.navbar-nav > li > .dropdown-menu { background-color: #e39100; }
 /********************************************************************
 			Buttons
 *********************************************************************/
