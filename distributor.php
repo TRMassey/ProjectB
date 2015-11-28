@@ -17,7 +17,7 @@
 	<div class="row col-wrap">
 		<!-- left side of screen -->
 		<div class="col-md-4 col-xs-4 col">
-			<div class="inside inside-full-height">
+			<div class="inside inside-full-height ofMargin">
   			  <div class="content">
   			  	<img src="img/holder.png">
   			  </div>
@@ -26,8 +26,8 @@
 
 		<!-- right side of screen -->
 		<div class="col-md-8 col-xs-8 col">
-			<div class="inside inside-full-height">
-				  <div class="content">
+			<div class="inside inside-full-height ofMargin">
+				  <div class="content ofMargin">
 				  	<div class="mainText">			
 					<div class="content-fluid">
 						<div class="row">

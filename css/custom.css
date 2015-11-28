@@ -66,6 +66,13 @@ h2 {
 .col-wrap{  
     overflow: hidden;   
 }  
+
+.ofMargin{
+	height: 100%;
+	min-height: 100%;
+ 	margin-top: 0;
+  	margin-bottom: 5%;
+} 
 /**********************************/
 p {
 	margin-right: 5%;
