@@ -51,7 +51,7 @@ h2 {
 }
 
 .inside-full-height, .content {
-	height: 100%;
+	height: 100vh;
 	min-height: 100%;
  	margin-top: 0;
   	margin-bottom: 5%;
