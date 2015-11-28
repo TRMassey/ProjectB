@@ -23,7 +23,7 @@
 					<ul class="nav navbar-nav navbar-right">
 						<li><a href="index.php">HOME</a></li>
 						<li><a href="receive.php">DISTRIBUTION LOCATIONS</a></li>
-						<li><a>BECOME A DISTRIBUTION LOCATION</a></li>
+						<li><a href="distributor.php">BECOME A DISTRIBUTION LOCATION</a></li>
 						<li><a href="donate.php">DONATE FOOD</a></li>
 					</ul>
 				</div>
