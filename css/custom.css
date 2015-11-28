@@ -54,7 +54,7 @@ h2 {
 	height: 100vh;
 	min-height: 100%;
  	margin-top: 0;
-  	margin-bottom: 5%;
+  	margin-bottom: 0%;
 }
 
 /** taken from http://stackoverflow.com/questions/14819425/bootstrap-div-100-height-of-its-parent-element */
