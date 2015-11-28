@@ -52,9 +52,9 @@ else{
 $testDonation->sqlInsert("BBB", "BBB", "BBB", "BBB", "BBB", 2, 1);
 
 //test to find entries with ISNEW value 1, should return 1 row
-echo "5. Database contains 2 entries, 1 has ISNEW=1, query for rows ISNEW=1 should return 1 matching row: ";
+echo "5. Database contains 2 entries, 1 has ISNEW=1, query for rows ISNEW=1 should return 0 matching row: ";
 $returnedRows = $testDonation->rowInfo(1);
-if(count($returnedRows) == 1 && $returnedRows[0][1] == 'BBB' && $returnedRows[0][6] == 2 && $returnedRows[0][8] == 1){
+if(count($returnedRows) == 0){
    echo "Passed.<br>";
 }
 else{
