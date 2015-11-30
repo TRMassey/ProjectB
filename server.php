@@ -1,10 +1,16 @@
 <?php
+include 'dbinfo.php';
 
 //a new mysqli is set up to connect to my database and error message if this fails
 class server {
 	
 	public static function emailClients(){
-		
+
+	  global $servername;
+	  global $username;
+	  global $password;
+	  global $dbname;
+	  
 		$mysqli = new mysqli($servername, $username, $password, $dbname);
 		if(!$mysqli || $mysqli->connect_errno){
 			echo "Connection error ".$mysqli->connect_errno . "".$mysqli->connect_error;

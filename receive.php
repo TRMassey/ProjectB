@@ -1,8 +1,8 @@
   <?php
-  	include "info.php";
+  	include "dbinfo.php";
 
   // must have my info.php file to get password. Contact me if you don't have it. I emailed it.
-  $mysqli = new mysqli("oniddb.cws.oregonstate.edu", "masseyta-db", $dbpass, "masseyta-db");
+  $mysqli = new mysqli("oniddb.cws.oregonstate.edu", $username, $password, $dbname);
   	if($mysqli->connect_errno){
     	echo "ERROR : Connection failed: (".$mysqli->connect_errno.")".$mysqli->connect_error;
   }
@@ -107,12 +107,9 @@
 							</div>
 
 							<?php   
-
-
 								if(isset($_GET['submit']) && $_GET['submit'] != "" ){
     								$state = $_GET['pickupState'];
     
-
 									echo '<div id="table-div">';
 										echo '<table class="table table-striped">';
 											echo "<tr>";
@@ -122,7 +119,6 @@
 												echo "<th>Days for Pick up</th>";
 												echo "<th>Food Description</th>";
 											echo "</tr>";
-
 									/* fill in the table from the db */
 									$result = mysqli_query($mysqli, 'SELECT * FROM distribution WHERE STATE = "'.$state.'"');
 									while($row = mysqli_fetch_array($result)){

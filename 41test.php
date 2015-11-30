@@ -1,6 +1,6 @@
   <?php
     // MUST REPLACE WITH dbinfo.php file.
-  	include "dbinfoNOGIT.php";
+  	include "dbinfo.php";
 
   // must have my info.php file to get password. Contact me if you don't have it. I emailed it.
   $mysqli = new mysqli("oniddb.cws.oregonstate.edu", $username, $password, $dbname);
