@@ -29,14 +29,24 @@ DAYS VARCHAR(255) NOT NULL,
 PRIMARY KEY(DID)
 )ENGINE=InnoDB
 
+
+Inserting sample food donation
+INSERT INTO donations (DONOR, CONTACT, EMAIL, PHONE, DESCRIPTION, DISTID)
+VALUES('Donating Grocery', '123 road drive', 'grocery@groceries.com', '360-123-4567', 'Three boxes fresh produce', 'Janes distribution');
+
+INSERT INTO donations (DONOR, CONTACT, EMAIL, PHONE, DESCRIPTION, DISTID)
+VALUES('Donations R US', '456 road drive', 'grocery@groceries.com', '360-123-4567', 'Canned Goods', 'Janes distribution');
+
+INSERT INTO donations (DONOR, CONTACT, EMAIL, PHONE, DESCRIPTION, DISTID)
+VALUES('Helping Humanity', '123 road drive', 'grocery@groceries.com', '360-123-4567', 'Canned Goods', 'Pauls distribution');
+
 Inserting sample data into database.
-INSERT INTO distribution (NAME, STATE, EMAIL, ADDRESS, CITY, POSTCODE, PHONE, HOURS, DAYS) 
+INSERT INTO distribution (NAME, STATE, EMAIL, ADDRESS, CITY, POSTCODE, PHONE, HOURS, DAYS, FOOD) 
 VALUES ('Janes distribution','AL','ammj@oregonstate.edu','123 My Road','Montgomery','36104',
 '818-555-5555','3-5','Mon-Fri');
 
 INSERT INTO distribution (NAME, STATE, EMAIL, ADDRESS, CITY, POSTCODE, PHONE, HOURS, DAYS) 
 VALUES ('Pauls distribution','CA','ammj@oregonstate.edu','120 Glendale Blvd', 'Los Angeles', '90210','555-555-5555', '9-5', 'M-F');
-
 INSERT INTO distribution (NAME, STATE, EMAIL, ADDRESS, CITY, POSTCODE, PHONE, HOURS, DAYS) 
 VALUES ('Someones Grocers','AL','ammj@oregonstate.edu','120 Anywhere Blvd', 'Mobile', '36602','555-555-5555', '9-5', 'M-Sat');
 

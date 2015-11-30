@@ -102,7 +102,7 @@
 										<option value="WY">Wyoming</option>
 									</select>
 									</br>
-									<input type ="submit" align="center" id="submit" name="submit" value="Find Locations">
+									<input class="buttonOther" type ="submit" align="center" id="submit" name="submit" value="Find Locations">
         							</form>
 							</div>
 
@@ -118,10 +118,9 @@
 											echo "<tr>";
 												echo "<th>Donation Center</th>";
 												echo "<th>Address</th>";
-												echo "<th>Food Description</th>";
-												echo "<th>Food Type</th>";
 												echo "<th>Hours for Pick up</th>";
 												echo "<th>Days for Pick up</th>";
+												echo "<th>Food Description</th>";
 											echo "</tr>";
 
 									/* fill in the table from the db */
@@ -130,10 +129,13 @@
 										echo '<tr>';
 											echo '<td>'.$row['NAME'].'</td>';
 											echo '<td>'.$row['ADDRESS'].'</td>';
-											echo '<td> Description here </td>';
-											echo '<td> Food Type here </td>';
 											echo '<td>'.$row['HOURS'].'</td>';
 											echo '<td>'.$row['DAYS'].'</td>';
+											$result2 = mysqli_query($mysqli, 'SELECT DESCRIPTION FROM donations WHERE DISTID = "'.$row['NAME'].'"');
+											while($row2 = mysqli_fetch_array($result2)){
+												echo '<td>'.$row2['DESCRIPTION'].'</td>';
+    										    echo '<tr><td><td><td><td>';
+    									    }
         								echo '</tr>';   
 									}
 								}
