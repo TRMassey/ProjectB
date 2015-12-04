@@ -13,7 +13,7 @@
 <html>
 <head>
   <meta charset="utf-8"> 
-  <title>QUnit Trash Hunger in America Ïteration 1 Unit Tests</title>
+  <title>Trash Hunger in America Ïteration 1 Receive.php Unit Tests</title>
   <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.20.0.css">
 
   <link href="css/bootstrap.css" rel="stylesheet">
@@ -25,7 +25,7 @@
 <body>
 	<p>Test One: Testing select, class name pickupState</p>
 	<p>Purpose: Validate selection from dropdown is sent via GET</p>
-	<p>Manual Test: Select Alabama</p>
+	<p>Method (Manual Test): Select Alabama from dropdown menu.</p>
 	<p>Expect: Alabama </p>
 	<form action ='41test.php' method ='GET'>
 							<div class="form-group">
@@ -106,7 +106,7 @@
 	<br></br>
 	<p>Test Two: Testing class name pickupState and $state variable.</p>
 	<p>Purpose: Validate that selected name pickupState is saved correctly in variable $state</p>
-	<p>Manual Test: Select Alabama</p>
+	<p>Method (Manual Test): Select Alabama from dropdown menu.</p>
 	<p>Expect: Alabama </p>
 	    <?php   
 			if(isset($_GET['submit']) && $_GET['submit'] != "" ) {
@@ -126,7 +126,7 @@
 	<br></br>
 	<p>Test Three: Testing isset(GET_['submit'])</p>
 	<p>Purpose:  Ensure that page does not populate if GET_['submit'] is not set</p>
-	<p>Manual Test: <a href="41test.php">Reload page</a> without submiting location.</p>
+	<p>Method (Manual Test): <a href="41test.php">Reload page</a> without submitting location.</p>
 	<p>Expect: No Result </p>
 	    <?php   
 			if(isset($_GET['submit'])) {
@@ -139,7 +139,7 @@
 	<br></br>
 	<p>Test Four: Testing isset(GET_['submit'])</p>
 	<p>Purpose:  Ensure that page does populate if GET_['submit'] is set</p>
-	<p>Manual Test: Select California and click "Find Location" button.</p>
+	<p>Method (Manual Test): Select California and click "Find Location" button.</p>
 	<p>Expect: Donation Center: Janes Distribution, Address: 123 My Road, Food Description: Description here</p>
 	<p>Food Type: Food Type here, Hours for Pick up: 3-5, Days for Pick up: Mon-Fri</p>
 	    <?php   
