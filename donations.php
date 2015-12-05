@@ -4,7 +4,7 @@ include ('server.php');
 class donations {
 
     //call with only first 6 parameters, isNew is defaulted to true
-    public function sqlInsert($donor, $contact, $email, $phone, $description, $foodType, $isNew = 1){
+    public function sqlInsert($donor, $contact, $email, $phone, $description, $foodType, $distcenter, $isNew = 1){
 	   
 	  global $servername;
 	  global $username;
@@ -16,8 +16,8 @@ class donations {
 			echo "Error connecting to database";
 		}
 
-		$theInsert = $connection->prepare("INSERT INTO donations SET DONOR=?, CONTACT=?, EMAIL=?, PHONE=?, DESCRIPTION=?, FOODTYPE=?, ISNEW=?");		
-		$theInsert->bind_param("sssssii", $donor, $contact, $email, $phone, $description, $foodType, $isNew);
+		$theInsert = $connection->prepare("INSERT INTO donations SET DONOR=?, CONTACT=?, EMAIL=?, PHONE=?, DESCRIPTION=?, FOODTYPE=?, DISTID=?, ISNEW=?");		
+		$theInsert->bind_param("sssssisi", $donor, $contact, $email, $phone, $description, $foodType, $distcenter, $isNew);
 		$theInsert->execute();
       server::emailClients();  
     }
