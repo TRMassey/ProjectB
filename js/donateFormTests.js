@@ -395,7 +395,7 @@ QUnit.test( "Function Testing", function( assert ) {
 	var expectedPhone = "818-555-5555";
 	assert.ok($('#dPhone').val() == expectedPhone, "Phone populated in hidden form");
   
-	var expectedDistro = "Jane's distribution";
+	var expectedDistro = "Janes distribution";
 	assert.ok($('#dDistr').val() == expectedDistro, "Distro populated in hidden form");
 	
 	/**
