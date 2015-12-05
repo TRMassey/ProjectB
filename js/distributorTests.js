@@ -1,4 +1,10 @@
 $( document ).ready(function() {
+
+	// http://stackoverflow.com/questions/9538834/clear-form-fields-onload-and-onunload-on-back-button
+	var i;
+	for (i = 0; (i < document.forms.length); i++) {
+		document.forms[i].reset();
+	}
     $("#addSuccess").hide();
     $("#addError").hide();
 
@@ -24,16 +30,18 @@ $( document ).ready(function() {
                 pattern: /^[A-Za-z- .']*$/
             },
             distState: {
-                required: true
+                required: true,
+				minlength: 1
             },
             distPostcode: {
                 required: true,
                 minlength: 5,
+				maxlength: 5,
                 pattern: /^[0-9- ]*$/
             },
             distPhone: {
                 required: true,
-                pattern: /^\(\d{3}\)\s\d{3}-\d{4}$/
+                pattern: /^((\(\d{3}\))|(\d{3}))(\s)?\d{3}(-)?\d{4}$/
             },
             distDrophours: {
                 required: true,
@@ -60,25 +68,27 @@ $( document ).ready(function() {
             },
             distAddress: {
                 required: "Please provide an address",
-                minlength: "Address.",
+                minlength: "Address too short",
                 pattern: "Please use only letters, numbers and(.'-,#) in address"
             },
             distCity: {
                 required: "Please provide city",
-                minlength: "Address.",
+                minlength: "City too short.",
                 pattern: "Please use only letters, -, ', or . in in city name"
             },
             distState: {
-                required: "Please provide a state"
+                required: "Please provide a state",
+				minlength:  "Please choose a state"
             },
             distPostcode: {
                 required: "Postcode required",
                 minlength: "Postcode too short",
-                pattern: "Please use only numbers and - in postcode name)"
+				maxlenght: "Postcode too long",
+                pattern: "Please use only numbers in postcode"
             },
             distPhone: {
                 required:  "Please provide a phone number",
-                pattern:  "Please use the format (555) 555-5555"
+                pattern:  "Please use the format (555) 555-5555, 555 555-5555 or 5555555555"
             },
             distDrophours: {
                 required: "Drop hours required",
@@ -92,6 +102,18 @@ $( document ).ready(function() {
             }
         },
         errorClass: "invalid",
+		errorPlacement: function(error, element) {
+			error.insertAfter(element.parent().children("label"));
+		},
+
+        /* added color and error placement removed when button class added */
+        /*errorPlacement: function(error, element) {
+            if ($(element).hasClass("checkreq")) {
+                error.appendTo("#checkError");
+            } else {
+                error.insertAfter(element);
+            }
+        },*/
         success: function(label) {
             label.addClass("valid").text("Ok!")
         },
@@ -130,6 +152,10 @@ function showError(err){
     $("#addError").show();
 }
 
+QUnit.config.urlConfig.pop({
+});
+QUnit.config.urlConfig.pop({
+});
 QUnit.test("Page load test", function( assert ) {
     var dropDownLoad = $("#distState option").size();
     assert.ok( dropDownLoad == "52", "Foam loads, page load passed" );
@@ -138,11 +164,10 @@ QUnit.test("Page load test", function( assert ) {
 QUnit.test("Divs hidden/visible test", function( assert ) {
     assert.ok( $('#addSuccess').is( ":hidden" ), "Main Div Adjustment: addSuccess Hidden" );
     assert.ok( $('#addError').is( ":hidden" ), "Main Div Adjustment: addError Hidden" );
-    assert.ok( !$('addDistributor').is( ":hidden" ), "Main Div Adjustment: addDistributor Visible" );
+    assert.ok( !$('#addDistributor').is( ":hidden" ), "Main Div Adjustment: addDistributor Visible" );
 });
 
 QUnit.test("Form validation testing", function( assert ) {
-
     var frmPass = true;
 
     // test form submission
@@ -252,7 +277,7 @@ QUnit.test("Form validation testing", function( assert ) {
     } 
     assert.ok(frmPass, "No form submit with invalid phone.  Phone only failure for validation");
 
-    $("#distPhone").val("555 555 5555");  
+    $("#distPhone").val("555 555 555");  
     frmPass = true;
     if(!$("#distName").valid() || !$("#distEmail").valid() || !$("#distAddress").valid() || !$("#distCity").valid() || !$("#distState").valid() || !$("#distPostcode").valid() || $("#distPhone").valid() || !$("#distDrophours").valid() || !$("#distPickuphours").valid())  {
         frmPass = false;
@@ -281,12 +306,11 @@ QUnit.test("Form validation testing", function( assert ) {
 
     // submit form
     $("#frmSubmit").click();
-    
+
 });
 
 QUnit.test("Form submission success testing", function( assert ) {
     assert.ok( $('#addDistributor').is( ":hidden" ), "Add Distributor Submit Adjustment: addDistributor is hidden" );
     assert.ok( !$('#addSuccess').is( ":hidden" ), "Add Distributor Submit Adjustment: addSuccess visible" );
-    assert.ok( $('#addError').is( ":hidden" ), "Add Distributor Submit Adjustment: addError Hidden" );
-    
+    assert.ok( $('#addError').is( ":hidden" ), "Add Distributor Submit Adjustment: addError Hidden" );  
 });

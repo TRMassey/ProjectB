@@ -2,15 +2,17 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>QUnit Trash Hunger in America Ïteration 1 Unit Tests</title>
+
+  <title>QUnit Trash Hunger in America Iteration 1 Unit Tests</title>
   <link rel="stylesheet" href="//code.jquery.com/qunit/qunit-1.20.0.css">
 
   <link href="css/bootstrap.css" rel="stylesheet">
   <link href="css/custom.css" rel="stylesheet">
   <link rel="stylesheet" href="//maxcdn.boostrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
   <link href='https://fonts.googleapis.com/css?family=Fira+Sans:400,700' rel='stylesheet' type='text/css'>
+  <link href="css/qunitcustom.css" rel="stylesheet">
 </head>
-<body>
+<body onload="">
   <div id="qunit"></div>
   <div id="qunit-fixture"></div>
 	<?php include("storeNav.php"); ?>

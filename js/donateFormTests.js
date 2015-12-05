@@ -3,7 +3,15 @@
 * Pre-conditions:  Document Ready
 * Post-condition validation on form
 */
+
 $( document ).ready(function() {
+
+	// http://stackoverflow.com/questions/9538834/clear-form-fields-onload-and-onunload-on-back-button
+	var i;
+	for (i = 0; (i < document.forms.length); i++) {
+		document.forms[i].reset();
+	}
+
     /* added hide donateMain */
     $("#donateMain").show();
     $("#donateSubmit").hide(); // hide donate submission form until donation center has been selected
@@ -43,7 +51,7 @@ $( document ).ready(function() {
             /* added phone pattern */
             distPhone: {
                 required: true,
-                pattern: /^\(\d{3}\)\s\d{3}-\d{4}$/
+                pattern: /^((\(\d{3}\))|(\d{3}))(\s)?\d{3}(-)?\d{4}$/
             },
             distDesc: {
                 required: true,
@@ -75,7 +83,7 @@ $( document ).ready(function() {
             /* added phone pattern */
             distPhone: {
                 required:  "Please provide a phone number",
-                pattern:  "Please use the format (555) 555-5555"
+                pattern:  "Please use the format (555) 555-5555, 555 555-5555 or 5555555555"
             },
             distDesc: {
                 required: "Please provide a description",
@@ -83,14 +91,22 @@ $( document ).ready(function() {
                 pattern: "Please use only letters, numbers and(.'-,?) in Description"
             }
         },
+		errorPlacement: function(error, element) {
+			if ($(element).hasClass("checkreq")) {
+                error.appendTo("#checkError");
+            } else {
+				error.insertAfter(element.parent().children("label"));
+			}
+		},
+
         /* added color and error placement removed when button class added */
-        errorPlacement: function(error, element) {
+        /*errorPlacement: function(error, element) {
             if ($(element).hasClass("checkreq")) {
                 error.appendTo("#checkError");
             } else {
                 error.insertAfter(element);
             }
-        },
+        },*/
         errorClass: "invalid",
         success: function(label) {
             label.addClass("valid").text("Ok!")
@@ -117,6 +133,7 @@ $( document ).ready(function() {
 
         }
     });
+	
     
 });
 
@@ -341,10 +358,12 @@ function showError(){
     $("#donateError").show();
 }
 
+QUnit.config.urlConfig.pop({
+});
+QUnit.config.urlConfig.pop({
+});
 QUnit.test( "Function Testing", function( assert ) {
-
 	var frmPass = true;
-  
 	/**
 	* Check Page Loads
 	**/
@@ -482,7 +501,7 @@ QUnit.test( "Function Testing", function( assert ) {
 	} 
 	assert.ok(frmPass, "No form Submission with invalid phone.  Phone only failure for Validation");
 
-	$("#distPhone").val("555 555 5555");  
+	$("#distPhone").val("555 555 555");  
 	frmPass = true;
 	if(!$("#distOrg").valid() || !$("#distContact").valid() || !$("#distEmail").valid() || $("#distPhone").valid() || !$("#distDesc").valid() || !$("#frmProduce").valid() ){
 		frmPass = false;
@@ -512,7 +531,8 @@ QUnit.test( "Function Testing", function( assert ) {
 	**/
 	assert.ok( $('#donateMain').is( ":hidden" ), "Schedule Submit Div Adjustment: donateMain Hidden" );
 	assert.ok( $('#donateSubmit').is( ":hidden" ), "Schedule Submit Adjustment: donateSubmit hidden" );  
-	assert.ok( !$('#donateSuccess').is( ":hidden" ), "Schedule Submit Adjustment: donateSubmit Hidden" );
+	assert.ok( !$('#donateSuccess').is( ":hidden" ), "Schedule Submit Adjustment: donateSuccess Hidden" );
 	assert.ok( $('#donateError').is( ":hidden" ), "Schedule Submit Adjustment: donateError Hidden" );
+	
 	
 });

@@ -5,68 +5,109 @@ $( document ).ready(function() {
     $("#distForm").validate({
         rules: {
             distName: {
-                required: true
+                required: true,
+                minlength: 4,
+                pattern: /^[A-Za-z0-9- ']*$/
             },
             distEmail: {
                 required: true,
                 email: true
             },
             distAddress: {
-                required: true
+                required: true,
+                minlength: 4,
+                pattern: /^[A-Za-z0-9- .'(),#]*$/
             },
             distCity: {
-                required: true
+                required: true,
+                minlength: 4,
+                pattern: /^[A-Za-z- .']*$/
             },
             distState: {
-                required: true
+                required: true,
+				minlength: 1
             },
             distPostcode: {
-                required: true
+                required: true,
+                minlength: 5,
+				maxlength: 5,
+                pattern: /^[0-9- ]*$/
+            },
+            distPhone: {
+                required: true,
+                pattern: /^((\(\d{3}\))|(\d{3}))(\s)?\d{3}(-)?\d{4}$/
             },
             distDrophours: {
-                required: true
+                required: true,
+                minlength: 4,
+                pattern: /^[A-Za-z0-9- .(),]*$/
             },
             distPickuphours: {
-                required: true
+                required: true,
+                minlength: 4,
+                pattern: /^[A-Za-z0-9- .(),]*$/
+
             }
         },
         
         messages: {
             distName: {
-                required: "Distributor name required"
+                required: "Distribution location name required",
+                minlength: "Distribution location name too short",
+                pattern: "Please use only letters, numbers, - or ' in distribution location name"
             },
             distEmail: {
                 required: "Please provide an email address",
                 email: "Please enter a valid email address"
             },
             distAddress: {
-                required: "Please provide a street address"
+                required: "Please provide an address",
+                minlength: "Address too short",
+                pattern: "Please use only letters, numbers and(.'-,#) in address"
             },
             distCity: {
-                required: "Please provide a city"
+                required: "Please provide city",
+                minlength: "City too short.",
+                pattern: "Please use only letters, -, ', or . in in city name"
             },
             distState: {
-                required: "Please provide a state"
+                required: "Please provide a state",
+				minlength:  "Please choose a state"
             },
             distPostcode: {
-                required: "Please provide a postcode"
+                required: "Postcode required",
+                minlength: "Postcode too short",
+				maxlenght: "Postcode too long",
+                pattern: "Please use only numbers in postcode)"
+            },
+            distPhone: {
+                required:  "Please provide a phone number",
+                pattern:  "Please use the format (555) 555-5555, 555 555-5555 or 5555555555"
             },
             distDrophours: {
-                required: "Please provide drop hours for this location"
+                required: "Drop hours required",
+                minlength: "Drop hours too short",
+                pattern: "Please use only letters, numbers and(.-,) in drop hours"
             },
             distPickuphours: {
-                required: "Please provide pickup hours for this location"
+                required: "Pickup hours required",
+                minlength: "Pickup hours too short",
+                pattern: "Pickup use only letters, numbers and(.-,) in drop hours"
             }
         },
+        errorClass: "invalid",
+		errorPlacement: function(error, element) {
+			error.insertAfter(element.parent().children("label"));
+		},
 
-        errorPlacement: function(error, element) {
+        /* added color and error placement removed when button class added */
+        /*errorPlacement: function(error, element) {
             if ($(element).hasClass("checkreq")) {
                 error.appendTo("#checkError");
             } else {
                 error.insertAfter(element);
             }
-        },
-        errorClass: "invalid",
+        },*/
         success: function(label) {
             label.addClass("valid").text("Ok!")
         },
@@ -76,16 +117,15 @@ $( document ).ready(function() {
                 url: 'addDistributor.php',
                 data: $('form').serialize(),
                 success: function (data) {
-                    console.log(data);
                     if (data == "success")
                         showSuccess();
                     else
-                        showError();
+                        showError(data);
                 },
-                error: function() {
-                    showError();
+                error: function(data) {
+                    showError(data);
                 },
-				async: false
+                async: false
             });
 
         }
@@ -99,8 +139,9 @@ function showSuccess(){
     $("#addError").hide();
 }
 
-function showError(){
+function showError(err){
     $("#addDistributor").hide();
     $("#addSuccess").hide();
+    $("#addError").html("<h3 class=\"invalid\">" + err + "</h3>")
     $("#addError").show();
 }

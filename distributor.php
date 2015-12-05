@@ -38,23 +38,23 @@
 					<div class="row" id="addDistributor">
 						<form name="distForm" id="distForm" role="form" method="post" action="">
 							<div class="form-group">
-								<label>Distribution Location Name:</label>
+								<label>Distribution Location Name:&nbsp;</label>
 									<input type="text" name="distName" id="distName" class="form-control required text">
 							</div>
 							<div class="form-group">
-								<label>Distributor Email:</label>
+								<label>Distributor Email:&nbsp;</label>
 									<input type="text" name="distEmail" id="distEmail" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Address:</label>
+								<label>Address:&nbsp;</label>
 									<input type="text" name="distAddress" id="distAddress" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>City</label>
+								<label>City:&nbsp;</label>
 									<input type="text" name="distCity" id="distCity" class="form-control">
 							</div>
 							<div class="form-group">
-									<label>State:</label>
+									<label>State:&nbsp;</label>
 										<select class="form-control" name="distState" id="distState">
 											<option value="">Please Choose State</option>
 											<option value="AL">Alabama</option>
@@ -112,19 +112,19 @@
 							
 							</div>
 							<div class="form-group">
-								<label>Zip code:</label>
+								<label>Zip code:&nbsp;</label>
 									<input type="text" name="distPostcode" id="distPostcode" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Phone:</label>
+								<label>Phone:&nbsp;</label>
 									<input type="text" name="distPhone" id="distPhone" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Drop Hours:</label>
+								<label>Drop Hours:&nbsp;</label>
 									<input type="text" name="distDrophours" id="distDrophours" class="form-control">
 							</div>
 							<div class="form-group">
-								<label>Pickup Hours:</label>
+								<label>Pickup Hours:&nbsp;</label>
 									<input type="text" name="distPickuphours" id="distPickuphours" class="form-control">
 							</div>
 							<div class="row dcentered">

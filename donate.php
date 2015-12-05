@@ -15,11 +15,10 @@
 	<body>
 	<?php include("storeNav.php"); ?>
 	
-	<div class="row">
-
+	<div class="row col-wrap">
 		<!-- left side of screen -->
-		<div class="col-md-4 col-xs-4">
-			<div class="inside inside-full-height">
+		<div class="col-md-4 col-xs-4 col">
+			<div class="inside inside-full-height ofMargin">
   			  <div class="content">
   			  	<img src="img/holder.png">
   			  </div>
@@ -27,9 +26,9 @@
 		</div>
 
 		<!-- right side of screen -->
-		<div class="col-md-8 col-xs-8">
-			<div class="inside inside-full-height">
-  				  <div class="content">
+		<div class="col-md-8 col-xs-8 col">
+			<div class="inside inside-full-height ofMargin">
+				  <div class="content ofMargin">
   				  	<div class="mainText">
 						
 						<div class="content-fluid">
@@ -147,32 +146,32 @@
 						<!-- changed form name to not clash with other form -->
 							<form name="requestForm" role="form" id="requestForm" method="post" action="">
 								<div class="form-group">
-									<label>Distribution Center:</label>
+									<label>Distribution Center:&nbsp;</label>
 								</div>
 								<div class="row" id="subDistributor">
 								</div>
 								<div class="form-group">
-									<label>Donor/Organization Name:</label>
+									<label>Donor/Organization Name:&nbsp;</label>
 										<input type="text" name="distOrg" id="distOrg" class="form-control required text">
 								</div>
 								<div class="form-group">
-									<label>Contact Name:</label>
+									<label>Contact Name:&nbsp;</label>
 										<input type="text" name="distContact" id="distContact" class="form-control">
 								</div>
 								<div class="form-group">
-									<label>Email:</label>
+									<label>Email:&nbsp;</label>
 										<input type="text" name="distEmail" id="distEmail" class="form-control">
 								</div>
 								<div class="form-group">
-									<label>Phone: (555) 555-5555</label>
+									<label>Phone:&nbsp;</label>
 										<input type="text" name="distPhone" id="distPhone" class="form-control">
 								</div>
 								<div class="form-group">
-									<label>Description of Donation:</label>
+									<label>Description of Donation:&nbsp;</label>
 										<input type="text" name="distDesc" id="distDesc" class="form-control">
 								</div>
 								<div class="form-group">
-									<label for="foodType">Food Type:</label>
+									<label for="foodType">Food Type:&nbsp;</label>
 										<!-- updated div name and id and added error box -->
 										<input type="checkbox" name="produce" value="produce" id="frmProduce" class="checkreq">Produce
 										<input type="checkbox" name="perishables" value="perishables" id="frmPerishables">Perishables

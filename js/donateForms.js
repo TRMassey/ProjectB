@@ -43,8 +43,8 @@ $( document ).ready(function() {
             /* added phone pattern */
             distPhone: {
                 required: true,
-                pattern: /^\(\d{3}\)\s\d{3}-\d{4}$/
-            },
+                pattern: /^((\(\d{3}\))|(\d{3}))(\s)?\d{3}(-)?\d{4}$/
+			},
             distDesc: {
                 required: true,
                 minlength: 4,
@@ -75,7 +75,7 @@ $( document ).ready(function() {
             /* added phone pattern */
             distPhone: {
                 required:  "Please provide a phone number",
-                pattern:  "Please use the format (555) 555-5555"
+                pattern:  "Please use the format (555) 555-5555, 555 555-5555 or 5555555555"
             },
             distDesc: {
                 required: "Please provide a description",
@@ -83,14 +83,22 @@ $( document ).ready(function() {
                 pattern: "Please use only letters, numbers and(.'-,?) in Description"
             }
         },
+		errorPlacement: function(error, element) {
+			if ($(element).hasClass("checkreq")) {
+                error.appendTo("#checkError");
+            } else {
+				error.insertAfter(element.parent().children("label"));
+			}
+		},
+
         /* added color and error placement removed when button class added */
-        errorPlacement: function(error, element) {
+        /*errorPlacement: function(error, element) {
             if ($(element).hasClass("checkreq")) {
                 error.appendTo("#checkError");
             } else {
                 error.insertAfter(element);
             }
-        },
+        },*/
         errorClass: "invalid",
         success: function(label) {
             label.addClass("valid").text("Ok!")

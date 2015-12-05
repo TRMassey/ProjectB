@@ -26,21 +26,20 @@
 	<body>
 		<?php include("storeNav.php"); ?>
 
-		<div class="row">
+	<div class="row col-wrap">
+		<!-- left side of screen -->
+		<div class="col-md-4 col-xs-4 col">
+			<div class="inside inside-full-height ofMargin">
+  			  <div class="content">
+  			  	<img src="img/holder.png">
+  			  </div>
+ 			</div>
+		</div>
 
-			<!-- left side of screen -->
-			<div class="col-md-4 col-xs-4">
-				<div class="inside inside-full-height">
-      			  <div class="content">
-      			  	<img src="img/holder.png">
-      			  </div>
-     			</div>
-			</div>
-
-			<!-- right side of screen -->
-			<div class="col-md-8 col-xs-8">
-				<div class="inside inside-full-height">
-      				  <div class="content">
+		<!-- right side of screen -->
+		<div class="col-md-8 col-xs-8 col">
+			<div class="inside inside-full-height ofMargin">
+				  <div class="content ofMargin">
       				  	<div class="mainText">
       				  		<h2>Food Distribution Locations</h2>
       				  		<form action ='receive.php' method ='GET'>
@@ -115,6 +114,7 @@
 											echo "<tr>";
 												echo "<th>Donation Center</th>";
 												echo "<th>Address</th>";
+												echo "<th>City</th>";
 												echo "<th>Hours for Pick up</th>";
 												echo "<th>Days for Pick up</th>";
 												echo "<th>Food Description</th>";
@@ -123,15 +123,24 @@
 									$result = mysqli_query($mysqli, 'SELECT * FROM distribution WHERE STATE = "'.$state.'"');
 									while($row = mysqli_fetch_array($result)){
 										echo '<tr>';
-											echo '<td>'.$row['NAME'].'</td>';
+											echo '<td>'.$row['NAME'].'</td>';								
 											echo '<td>'.$row['ADDRESS'].'</td>';
+											echo '<td>'.$row['CITY'].'</td>';
 											echo '<td>'.$row['HOURS'].'</td>';
 											echo '<td>'.$row['DAYS'].'</td>';
 											$result2 = mysqli_query($mysqli, 'SELECT DESCRIPTION FROM donations WHERE DISTID = "'.$row['NAME'].'"');
+											$count = 0;
 											while($row2 = mysqli_fetch_array($result2)){
-												echo '<td>'.$row2['DESCRIPTION'].'</td>';
-    										    echo '<tr><td><td><td><td>';
+												if($count != 0){
+													echo '<tr><td></td><td></td><td></td><td></td><td></td>';
+												}
+												echo '<td>'.$row2['DESCRIPTION'].'</td></tr>';
+												//echo '<tr><td></td><td></td><td></td><td></td></tr>';
+												$count++; 										    
     									    }
+											if($count == 0){
+												echo '<td></td></tr>';
+											}
         								echo '</tr>';   
 									}
 								}
