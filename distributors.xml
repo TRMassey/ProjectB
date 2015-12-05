@@ -2,7 +2,7 @@
 <distributors>
    <distributor>
       <id>1</id>
-	  <name>Jane's distribution</name>
+	  <name>Janes distribution</name>
 	  <email>ammj@oregonstate.edu</email>
 	  <address>123 My Road</address>
 	  <city>Montgomery</city>
@@ -14,7 +14,7 @@
    </distributor>
    <distributor>
       <id>2</id>
-	  <name>Paul's distribution</name>
+	  <name>Pauls distribution</name>
 	  <email>ammj@oregonstate.edu</email>
 	  <address>120 Glendale BLVD</address>
 	  <city>Los Angeles</city>
@@ -26,7 +26,7 @@
    </distributor>
    <distributor>
       <id>3</id>
-	  <name>Someone's Grocers</name>
+	  <name>Someones Grocers</name>
 	  <email>ammj@oregonstate.edu</email>
 	  <address>120 Anywhere BLVD</address>
 	  <city>Mobile</city>
@@ -38,7 +38,7 @@
    </distributor>
       <distributor>
       <id>4</id>
-	  <name>Alex's distribution</name>
+	  <name>Alexs distribution</name>
 	  <email>ammj@oregonstate.edu</email>
 	  <address>120 Glendale BLVD</address>
 	  <city>Mobile</city>
